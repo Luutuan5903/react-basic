@@ -7,6 +7,11 @@ class MyComponent extends React.Component {
   state = {
     firstName: "",
     lastName: "",
+    arrJob: [
+      { id: "abcJob1", title: "Developer", salary: "500$" },
+      { id: "abcJob2", title: "Tester", salary: "400$" },
+      { id: "abcJob3", title: "Project managers", salary: "1000$" },
+    ],
   };
 
   /*
@@ -59,9 +64,12 @@ class MyComponent extends React.Component {
           <input type="submit" onClick={(event) => this.handleSubmit(event)} />
         </form>
 
-        <ChildComponent name={"child one"} />
-        <ChildComponent name={"child two"} />
-        <ChildComponent name={"child three"} />
+        <ChildComponent
+          name={this.state.firstName}
+          age={"21"}
+          address={"ha noi"}
+          arrJob={this.state.arrJob}
+        />
       </>
     );
   }
